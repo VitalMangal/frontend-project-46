@@ -1,5 +1,5 @@
 import * as fs from "node:fs";
-import normalizePath from './normalazePath.cjs'
+import normalizePath from './normalazePath.js'
 
 const parseFile = (filePath) => {
     const nomalizedPath = normalizePath(filePath);
@@ -7,5 +7,5 @@ const parseFile = (filePath) => {
     const parseContentFile = JSON.parse(contentFile);
     return parseContentFile;
 }
-const filePathh = '../file1.json'
-console.log(parseFile(filePathh));
+
+export default parseFile;

@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/VitalMangal/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/VitalMangal/frontend-project-46/actions)",
-  "main": "bin/gendiff.cjs",
+  "main": "bin/gendiff.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "commander": "^11.1.0"
   },
   "bin": {
-    "gendiff": "bin/gendiff.cjs"
+    "gendiff": "bin/gendiff.js"
   },
   "devDependencies": {}
 }
