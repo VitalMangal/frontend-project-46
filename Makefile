@@ -1,8 +1,17 @@
-gendiff:
-	node bin/gendiff.cjs -h
-
 install:
-	npm ci
+	npm install
 
 publish:
 	npm publish --dry-run
+
+link:
+	npm link
+
+unlink:
+	npm unlink gendiff --global
+
+test:
+	npm test
+
+ci:
+	npm ci
