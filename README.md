@@ -39,4 +39,4 @@ CLI-Утилита, позволяющая находить и выводить 
 
 ## Как это выглядит
 
-https://asciinema.org/a/C3Fg1GJ58tfbcopsr4n7hebmX
+https://asciinema.org/a/4GT7sVmDOpIkmpH9FH2d9xkuU

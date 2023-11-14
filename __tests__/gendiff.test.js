@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test('flat file test', () => {
+test('JSON flat file test', () => {
   const expFilePath1 = getFixturePath('expect_file1.json');
   const expFilePath2 = getFixturePath('expect_file2.json');
   const resFilePath = getFixturePath('receive_file1.txt');
@@ -17,5 +17,17 @@ test('flat file test', () => {
   const result = fs.readFileSync(resFilePath, 'utf-8');
 
   expect(getGenDiff).toEqual(result);
-  console.log('Тесты прошли успешно');
+  console.log('JSON тесты прошли успешно');
+});
+
+test('YAML flat file test', () => {
+  const expFilePath1 = getFixturePath('expect_file1.yaml');
+  const expFilePath2 = getFixturePath('expect_file2.yaml');
+  const resFilePath = getFixturePath('receive_file1.txt');
+
+  const getGenDiff = gendiff(expFilePath1, expFilePath2);
+  const result = fs.readFileSync(resFilePath, 'utf-8');
+
+  expect(getGenDiff).toEqual(result);
+  console.log('YAML тесты прошли успешно');
 });
