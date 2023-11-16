@@ -18,7 +18,7 @@ const parseFile = (filePath) => {
       parseContentFile = yaml.load(contentFile);
       break;
     default:
-      return Error('Неизвестный тип файла');
+      throw new Error(`Unknown file extension: ${extension}`);
   }
 
   return parseContentFile;
