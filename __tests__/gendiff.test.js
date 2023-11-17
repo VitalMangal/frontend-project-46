@@ -55,3 +55,27 @@ test('YAML plain test', () => {
   expect(getGenDiff).toEqual(result);
   console.log('YAML plain - тесты прошли успешно');
 });
+
+test('JSON json test', () => {
+  const expFilePath1 = getFixturePath('expect_file1.json');
+  const expFilePath2 = getFixturePath('expect_file2.json');
+  const resFilePath = getFixturePath('receive_json_file.txt');
+
+  const getGenDiff = gendiff(expFilePath1, expFilePath2, 'json');
+  const result = fs.readFileSync(resFilePath, 'utf-8');
+
+  expect(getGenDiff).toEqual(result);
+  console.log('JSON json - тесты прошли успешно');
+});
+
+test('YAML json test', () => {
+  const expFilePath1 = getFixturePath('expect_file1.yaml');
+  const expFilePath2 = getFixturePath('expect_file2.yaml');
+  const resFilePath = getFixturePath('receive_json_file.txt');
+
+  const getGenDiff = gendiff(expFilePath1, expFilePath2, 'json');
+  const result = fs.readFileSync(resFilePath, 'utf-8');
+
+  expect(getGenDiff).toEqual(result);
+  console.log('YAML json - тесты прошли успешно');
+});

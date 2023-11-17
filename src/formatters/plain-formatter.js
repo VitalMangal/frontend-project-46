@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const givePath = (path, newPath) => { // надо доработать
+const givePath = (path, newPath) => {
   if (path === '') {
     return newPath;
   }

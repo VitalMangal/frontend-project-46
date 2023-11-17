@@ -1,0 +1,160 @@
+[
+  {
+    "key": "common",
+    "value": [
+      {
+        "key": "follow",
+        "value": false,
+        "status": "add"
+      },
+      {
+        "key": "setting1",
+        "value": "Value 1",
+        "status": "unchange"
+      },
+      {
+        "key": "setting2",
+        "value": 200,
+        "status": "remove"
+      },
+      {
+        "key": "setting3",
+        "value": {
+          "obj1Key": true,
+          "obj2Key": null
+        },
+        "status": "change"
+      },
+      {
+        "key": "setting4",
+        "value": "blah blah",
+        "status": "add"
+      },
+      {
+        "key": "setting5",
+        "value": [
+          {
+            "key": "key5",
+            "value": "value5",
+            "status": "unchange"
+          }
+        ],
+        "status": "add"
+      },
+      {
+        "key": "setting6",
+        "value": [
+          {
+            "key": "doge",
+            "value": [
+              {
+                "key": "wow",
+                "value": {
+                  "obj1Key": "",
+                  "obj2Key": "so much"
+                },
+                "status": "change"
+              }
+            ],
+            "status": "change objs"
+          },
+          {
+            "key": "key",
+            "value": "value",
+            "status": "unchange"
+          },
+          {
+            "key": "ops",
+            "value": "vops",
+            "status": "add"
+          }
+        ],
+        "status": "change objs"
+      }
+    ],
+    "status": "change objs"
+  },
+  {
+    "key": "group1",
+    "value": [
+      {
+        "key": "baz",
+        "value": {
+          "obj1Key": "bas",
+          "obj2Key": "bars"
+        },
+        "status": "change"
+      },
+      {
+        "key": "foo",
+        "value": "bar",
+        "status": "unchange"
+      },
+      {
+        "key": "nest",
+        "value": {
+          "obj1Key": [
+            {
+              "key": "key",
+              "value": "value",
+              "status": "unchange"
+            }
+          ],
+          "obj2Key": "str"
+        },
+        "status": "change"
+      }
+    ],
+    "status": "change objs"
+  },
+  {
+    "key": "group2",
+    "value": [
+      {
+        "key": "abc",
+        "value": 12345,
+        "status": "unchange"
+      },
+      {
+        "key": "deep",
+        "value": [
+          {
+            "key": "id",
+            "value": 45,
+            "status": "unchange"
+          }
+        ],
+        "status": "unchange"
+      }
+    ],
+    "status": "remove"
+  },
+  {
+    "key": "group3",
+    "value": [
+      {
+        "key": "deep",
+        "value": [
+          {
+            "key": "id",
+            "value": [
+              {
+                "key": "number",
+                "value": 45,
+                "status": "unchange"
+              }
+            ],
+            "status": "unchange"
+          }
+        ],
+        "status": "unchange"
+      },
+      {
+        "key": "fee",
+        "value": 100500,
+        "status": "unchange"
+      }
+    ],
+    "status": "add"
+  }
+]
