@@ -14,7 +14,10 @@ const parseFile = (filePath) => {
     case '.json':
       parseContentFile = JSON.parse(contentFile);
       break;
-    case '.yaml' || '.yml':
+    case '.yaml':
+      parseContentFile = yaml.load(contentFile);
+      break;
+    case '.yml':
       parseContentFile = yaml.load(contentFile);
       break;
     default:
