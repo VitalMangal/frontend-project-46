@@ -8,50 +8,50 @@ const __dirname = path.dirname(__filename);
 
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test('JSON flat file test', () => {
+test('JSON stylish test', () => {
   const expFilePath1 = getFixturePath('expect_file1.json');
   const expFilePath2 = getFixturePath('expect_file2.json');
-  const resFilePath = getFixturePath('receive_file1.txt');
+  const resFilePath = getFixturePath('receive_stylish_file.txt');
 
-  const getGenDiff = gendiff(expFilePath1, expFilePath2);
+  const getGenDiff = gendiff(expFilePath1, expFilePath2, 'stylish');
   const result = fs.readFileSync(resFilePath, 'utf-8');
 
   expect(getGenDiff).toEqual(result);
-  console.log('JSON flat - тесты прошли успешно');
+  console.log('JSON stylish - тесты прошли успешно');
 });
 
-test('YAML flat file test', () => {
+test('YAML stylish test', () => {
   const expFilePath1 = getFixturePath('expect_file1.yaml');
   const expFilePath2 = getFixturePath('expect_file2.yaml');
-  const resFilePath = getFixturePath('receive_file1.txt');
+  const resFilePath = getFixturePath('receive_stylish_file.txt');
 
-  const getGenDiff = gendiff(expFilePath1, expFilePath2);
+  const getGenDiff = gendiff(expFilePath1, expFilePath2, 'stylish');
   const result = fs.readFileSync(resFilePath, 'utf-8');
 
   expect(getGenDiff).toEqual(result);
-  console.log('YAML flat - тесты прошли успешно');
+  console.log('YAML stylish - тесты прошли успешно');
 });
 
-test('JSON complex file test', () => {
-  const expFilePath1 = getFixturePath('expect_complex_file1.json');
-  const expFilePath2 = getFixturePath('expect_complex_file2.json');
-  const resFilePath = getFixturePath('receive_complex_file.txt');
+test('JSON plain test', () => {
+  const expFilePath1 = getFixturePath('expect_file1.json');
+  const expFilePath2 = getFixturePath('expect_file2.json');
+  const resFilePath = getFixturePath('receive_plain_file.txt');
 
-  const getGenDiff = gendiff(expFilePath1, expFilePath2);
+  const getGenDiff = gendiff(expFilePath1, expFilePath2, 'plain');
   const result = fs.readFileSync(resFilePath, 'utf-8');
 
   expect(getGenDiff).toEqual(result);
-  console.log('JSON complex - тесты прошли успешно');
+  console.log('JSON Plain - тесты прошли успешно');
 });
 
-test('YAML complex file test', () => {
-  const expFilePath1 = getFixturePath('expect_complex_file1.yaml');
-  const expFilePath2 = getFixturePath('expect_complex_file2.yaml');
-  const resFilePath = getFixturePath('receive_complex_file.txt');
+test('YAML plain test', () => {
+  const expFilePath1 = getFixturePath('expect_file1.yaml');
+  const expFilePath2 = getFixturePath('expect_file2.yaml');
+  const resFilePath = getFixturePath('receive_plain_file.txt');
 
-  const getGenDiff = gendiff(expFilePath1, expFilePath2);
+  const getGenDiff = gendiff(expFilePath1, expFilePath2, 'plain');
   const result = fs.readFileSync(resFilePath, 'utf-8');
 
   expect(getGenDiff).toEqual(result);
-  console.log('YAML complex - тесты прошли успешно');
+  console.log('YAML plain - тесты прошли успешно');
 });

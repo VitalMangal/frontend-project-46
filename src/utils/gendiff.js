@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import parseFile from './parsers.js';
-import formatter from './formatter.js';
+import formatter from '../formatters/index.js';
 
 const gendiff = (filepath1, filepath2, format = 'stylish') => {
   const data1 = parseFile(filepath1);
@@ -28,7 +28,7 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
         return { key, value: getValue(obj1[key]), status: 'unchange' };
       }
       if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
-        return { key, value: newTree(obj1[key], obj2[key]), status: 'unchange' }; // рекурсия
+        return { key, value: newTree(obj1[key], obj2[key]), status: 'change objs' }; // рекурсия
       }
       return { key, value: { obj1Key: getValue(obj1[key]), obj2Key: getValue(obj2[key]) }, status: 'change' };
     });

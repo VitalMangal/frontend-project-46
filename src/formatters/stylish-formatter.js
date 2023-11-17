@@ -7,7 +7,7 @@ const formatterStylish = (diffTree) => {
     const lines = tree.map((obj) => {
       if (_.isObject(obj.value)) {
         switch (obj.status) {
-          case 'unchange' || undefined: {
+          case 'unchange' || 'change objs': {
             return `${currentIndent}  ${obj.key}: ${iter(obj.value, depth + 1)}`;
           }
           case 'add': {
@@ -50,14 +50,4 @@ const formatterStylish = (diffTree) => {
   return iter(diffTree, 1);
 };
 
-const formatter = (diffTree, format) => {
-  switch (format) {
-    case 'stylish': {
-      return formatterStylish(diffTree);
-    }
-    default:
-      return Error('Неизвестный формат');
-  }
-};
-
-export default formatter;
+export default formatterStylish;
