@@ -21,8 +21,8 @@ test('JSON stylish test', () => {
 });
 
 test('YAML stylish test', () => {
-  const expFilePath1 = getFixturePath('expect_file1.yaml');
-  const expFilePath2 = getFixturePath('expect_file2.yaml');
+  const expFilePath1 = getFixturePath('expect_file1.yml');
+  const expFilePath2 = getFixturePath('expect_file2.yml');
   const resFilePath = getFixturePath('receive_stylish_file.txt');
 
   const getGenDiff = gendiff(expFilePath1, expFilePath2, 'stylish');
@@ -45,8 +45,8 @@ test('JSON plain test', () => {
 });
 
 test('YAML plain test', () => {
-  const expFilePath1 = getFixturePath('expect_file1.yaml');
-  const expFilePath2 = getFixturePath('expect_file2.yaml');
+  const expFilePath1 = getFixturePath('expect_file1.yml');
+  const expFilePath2 = getFixturePath('expect_file2.yml');
   const resFilePath = getFixturePath('receive_plain_file.txt');
 
   const getGenDiff = gendiff(expFilePath1, expFilePath2, 'plain');
@@ -69,8 +69,8 @@ test('JSON json test', () => {
 });
 
 test('YAML json test', () => {
-  const expFilePath1 = getFixturePath('expect_file1.yaml');
-  const expFilePath2 = getFixturePath('expect_file2.yaml');
+  const expFilePath1 = getFixturePath('expect_file1.yml');
+  const expFilePath2 = getFixturePath('expect_file2.yml');
   const resFilePath = getFixturePath('receive_json_file.txt');
 
   const getGenDiff = gendiff(expFilePath1, expFilePath2, 'json');
