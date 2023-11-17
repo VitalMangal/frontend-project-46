@@ -25,7 +25,7 @@ const formatterPlain = (diffTree) => {
         case 'unchange': {
           return [];
         }
-        case 'change objs': {
+        case 'changeObjs': {
           return iter(obj.value, newPath);
         }
         case 'add': {

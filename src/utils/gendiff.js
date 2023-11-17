@@ -28,7 +28,7 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
         return { key, value: getValue(obj1[key]), status: 'unchange' };
       }
       if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
-        return { key, value: newTree(obj1[key], obj2[key]), status: 'change objs' }; // рекурсия
+        return { key, value: newTree(obj1[key], obj2[key]), status: 'changeObjs' };
       }
       return { key, value: { obj1Key: getValue(obj1[key]), obj2Key: getValue(obj2[key]) }, status: 'change' };
     });

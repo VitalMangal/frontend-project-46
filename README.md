@@ -17,7 +17,7 @@ CLI-Утилита, позволяющая находить и выводить 
 
 ## Как это работает
 
-```sh
+
 Установка: (внутри директории с исходным кодом)
    make install
    make publish
@@ -35,7 +35,6 @@ CLI-Утилита, позволяющая находить и выводить 
 Примеры:
    gendiff --format plain ./config1.json ./config2.json
    gendiff -f json config.ini anotherConfig.json
-```
 
 ## Как это выглядит
 

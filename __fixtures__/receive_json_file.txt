@@ -56,7 +56,7 @@
                 "status": "change"
               }
             ],
-            "status": "change objs"
+            "status": "changeObjs"
           },
           {
             "key": "key",
@@ -69,10 +69,10 @@
             "status": "add"
           }
         ],
-        "status": "change objs"
+        "status": "changeObjs"
       }
     ],
-    "status": "change objs"
+    "status": "changeObjs"
   },
   {
     "key": "group1",
@@ -105,7 +105,7 @@
         "status": "change"
       }
     ],
-    "status": "change objs"
+    "status": "changeObjs"
   },
   {
     "key": "group2",
