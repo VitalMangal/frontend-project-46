@@ -7,24 +7,18 @@ const parseFile = (filePath) => {
   const normalizedPath = normalizePath(filePath);
   const contentFile = fs.readFileSync(normalizedPath, 'utf-8');
 
-  let parseContentFile;
   const extension = path.extname(normalizedPath).toLowerCase();
 
   switch (extension) {
     case '.json':
-      parseContentFile = JSON.parse(contentFile);
-      break;
+      return JSON.parse(contentFile);
     case '.yaml':
-      parseContentFile = yaml.load(contentFile);
-      break;
+      return yaml.load(contentFile);
     case '.yml':
-      parseContentFile = yaml.load(contentFile);
-      break;
+      return yaml.load(contentFile);
     default:
       throw new Error(`Unknown file extension: ${extension}`);
   }
-
-  return parseContentFile;
 };
 
 export default parseFile;
