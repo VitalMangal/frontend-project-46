@@ -5,15 +5,7 @@
 
 ## Что это
 
-CLI-Утилита, позволяющая находить и выводить на экран различия между двумя конфигурационными файлами формата json, yml или ini
-
-## Как это
-
-- JS с минимумом библиотечных зависимостей
-  - [lodash](https://github.com/lodash/lodash)
-  - [Commander](https://github.com/tj/commander.js) (библиотека, упрощающая создание command-line интерфейсов приложений)
-- Тесты: [Jest](https://github.com/facebook/jest)
-- [Eslint](https://github.com/eslint/eslint)
+CLI-Утилита, позволяющая находить и выводить на экран различия между двумя конфигурационными файлами формата json, yml или yaml
 
 ## Как это работает
 
@@ -27,15 +19,15 @@ CLI-Утилита, позволяющая находить и выводить 
    make unlink
 
 Использование:
-   gendiff [options] <initialConfig> <modifiedConfig>
+   gendiff [options] <filepath1.json> <filepath2.json>
 
 Доступные опции:
-   --format, -f  -  формат вывода: pretty (по умолчанию), plain, json
+   --format, -f  -  формат вывода: stylish (по умолчанию), plain, json
 
 Примеры:
-   gendiff --format plain ./config1.json ./config2.json
-   gendiff -f json config.ini anotherConfig.json
+   gendiff --format plain ./file1.json ./file2.json
+   gendiff -f json filepath1.yaml filepath2.yaml
 
 ## Как это выглядит
 
-https://asciinema.org/a/4GT7sVmDOpIkmpH9FH2d9xkuU
+https://asciinema.org/a/06cHUCbgIizOYqgJFK6w8Qn7y
