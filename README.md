@@ -7,9 +7,17 @@
 
 CLI-Утилита, позволяющая находить и выводить на экран различия между двумя конфигурационными файлами формата json, yml или yaml
 
+## Как это
+
+- JS с минимумом библиотечных зависимостей
+  - [lodash](https://github.com/lodash/lodash)
+  - [Commander](https://github.com/tj/commander.js) (библиотека, упрощающая создание command-line интерфейсов приложений)
+- Тесты: [Jest](https://github.com/facebook/jest)
+- [Eslint](https://github.com/eslint/eslint)
+
 ## Как это работает
 
-
+```sh
 Установка: (внутри директории с исходным кодом)
    make install
    make publish
@@ -27,7 +35,7 @@ CLI-Утилита, позволяющая находить и выводить 
 Примеры:
    gendiff --format plain ./file1.json ./file2.json
    gendiff -f json filepath1.yaml filepath2.yaml
-
+```
 ## Как это выглядит
 
 https://asciinema.org/a/06cHUCbgIizOYqgJFK6w8Qn7y

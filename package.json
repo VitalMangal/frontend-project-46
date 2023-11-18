@@ -1,8 +1,8 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/VitalMangal/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/VitalMangal/frontend-project-46/actions)",
-  "main": "src/utils/gendiff.js",
+  "description": "CLI utility designed to identify differences between json files",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "test": "npx jest"

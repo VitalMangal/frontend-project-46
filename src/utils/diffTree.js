@@ -1,8 +1,7 @@
 import _ from 'lodash';
 import parseFile from './parsers.js';
-import formatter from '../formatters/index.js';
 
-const gendiff = (filepath1, filepath2, format = 'stylish') => {
+const diffTree = (filepath1, filepath2) => {
   const data1 = parseFile(filepath1);
   const data2 = parseFile(filepath2);
 
@@ -27,8 +26,7 @@ const gendiff = (filepath1, filepath2, format = 'stylish') => {
     });
     return childrens;
   };
-  const diffTree = newTree(data1, data2);
-  return formatter(diffTree, format);
+  return newTree(data1, data2);
 };
 
-export default gendiff;
+export default diffTree;
