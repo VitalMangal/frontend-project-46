@@ -1,11 +1,6 @@
 import _ from 'lodash';
 
-const givePath = (path, newPath) => {
-  if (path === '') {
-    return newPath;
-  }
-  return [path, newPath].join('.');
-};
+const givePath = (path, newPath) => (path === '' ? newPath : [path, newPath].join('.'));
 
 const giveValue = (value) => {
   if (_.isObject(value)) {
@@ -14,28 +9,28 @@ const giveValue = (value) => {
   if (_.isString(value)) {
     return `'${value}'`;
   }
-  return value;
+  return `${value}`;
 };
 
 const formatterPlain = (diffTree) => {
   const iter = (tree, path) => {
-    const lines = tree.flatMap((obj) => {
-      const newPath = givePath(path, obj.key);
-      switch (obj.status) {
+    const lines = tree.flatMap(({ key, value, status }) => {
+      const newPath = givePath(path, key);
+      switch (status) {
         case 'unchange': {
           return [];
         }
         case 'changeObj': {
-          return iter(obj.value, newPath);
+          return iter(value, newPath);
         }
         case 'add': {
-          return `Property '${newPath}' was added with value: ${giveValue(obj.value)}`;
+          return `Property '${newPath}' was added with value: ${giveValue(value)}`;
         }
         case 'remove': {
           return `Property '${newPath}' was removed`;
         }
         case 'change': {
-          return `Property '${newPath}' was updated. From ${giveValue(obj.value.obj1Key)} to ${giveValue(obj.value.obj2Key)}`;
+          return `Property '${newPath}' was updated. From ${giveValue(value.obj1Value)} to ${giveValue(value.obj2Value)}`;
         }
         default:
           return [];

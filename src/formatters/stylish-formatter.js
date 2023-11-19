@@ -5,11 +5,12 @@ const specСhars = {
   add: '+ ',
   remove: '- ',
   changeObj: '  ',
+  indent: '  ',
 };
 
 const displayValue = (value, depth) => {
-  const currentIndent = '  '.repeat(depth * 2);
-  const bracketIndent = '  '.repeat(depth * 2 - 2);
+  const currentIndent = specСhars.indent.repeat(depth * 2);
+  const bracketIndent = specСhars.indent.repeat(depth * 2 - 2);
   if (_.isObject(value)) {
     const keys = Object.keys(value);
     const lines = keys.map((key) => `${currentIndent}${key}: ${displayValue(value[key], depth + 1)}`);
@@ -24,14 +25,16 @@ const displayValue = (value, depth) => {
 
 const formatterStylish = (diffTree) => {
   const iter = (tree, depth) => {
-    const currentIndent = '  '.repeat(depth * 2 - 1);
-    const bracketIndent = '  '.repeat(depth * 2 - 2);
+    const currentIndent = specСhars.indent.repeat(depth * 2 - 1);
+    const bracketIndent = specСhars.indent.repeat(depth * 2 - 2);
     const lines = tree.map((obj) => {
       if (obj.status === 'changeObj') {
         return `${currentIndent}${specСhars[obj.status]}${obj.key}: ${iter(obj.value, depth + 1)}`;
       }
       if (obj.status === 'change') {
-        return `${currentIndent}${specСhars.remove}${obj.key}: ${displayValue(obj.value.obj1Key, depth + 1)}\n${currentIndent}${specСhars.add}${obj.key}: ${displayValue(obj.value.obj2Key, depth)}`;
+        const before = `${currentIndent}${specСhars.remove}${obj.key}: ${displayValue(obj.value.obj1Value, depth + 1)}`;
+        const after = `${currentIndent}${specСhars.add}${obj.key}: ${displayValue(obj.value.obj2Value, depth + 1)}`;
+        return `${before}\n${after}`;
       }
       return `${currentIndent}${specСhars[obj.status]}${obj.key}: ${displayValue(obj.value, depth + 1)}`;
     });

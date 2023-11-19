@@ -1,9 +1,18 @@
 import _ from 'lodash';
-import parseFile from './parsers.js';
+import * as fs from 'node:fs';
+import path from 'node:path';
+import parse from './parsers.js';
+import normalizePath from './normalizePath.js';
 
 const diffTree = (filepath1, filepath2) => {
-  const data1 = parseFile(filepath1);
-  const data2 = parseFile(filepath2);
+  const content1 = fs.readFileSync(normalizePath(filepath1), 'utf-8');
+  const extension1 = path.extname(filepath1).toLowerCase();
+
+  const content2 = fs.readFileSync(normalizePath(filepath2), 'utf-8');
+  const extension2 = path.extname(filepath2).toLowerCase();
+
+  const data1 = parse(content1, extension1);
+  const data2 = parse(content2, extension2);
 
   const newTree = (obj1, obj2) => {
     const keys1 = Object.keys(obj1);
@@ -22,7 +31,7 @@ const diffTree = (filepath1, filepath2) => {
       if (obj1[key] === obj2[key]) {
         return { key, value: obj1[key], status: 'unchange' };
       }
-      return { key, value: { obj1Key: obj1[key], obj2Key: obj2[key] }, status: 'change' };
+      return { key, value: { obj1Value: obj1[key], obj2Value: obj2[key] }, status: 'change' };
     });
     return childrens;
   };

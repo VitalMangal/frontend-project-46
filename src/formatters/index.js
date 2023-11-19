@@ -4,17 +4,14 @@ import jsonFormatter from './json-formatter.js';
 
 const formatter = (diffTree, format) => {
   switch (format) {
-    case 'stylish': {
+    case 'stylish':
       return formatterStylish(diffTree);
-    }
-    case 'plain': {
+    case 'plain':
       return formatterPlain(diffTree);
-    }
-    case 'json': {
+    case 'json':
       return jsonFormatter(diffTree);
-    }
     default:
-      return Error(`Неизвестный формат - ${format}`);
+      throw new Error(`Неизвестный формат - ${format}`);
   }
 };
 
