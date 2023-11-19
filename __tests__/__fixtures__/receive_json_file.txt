@@ -32,13 +32,9 @@
       },
       {
         "key": "setting5",
-        "value": [
-          {
-            "key": "key5",
-            "value": "value5",
-            "status": "unchange"
-          }
-        ],
+        "value": {
+          "key5": "value5"
+        },
         "status": "add"
       },
       {
@@ -56,7 +52,7 @@
                 "status": "change"
               }
             ],
-            "status": "changeObjs"
+            "status": "changeObj"
           },
           {
             "key": "key",
@@ -69,10 +65,10 @@
             "status": "add"
           }
         ],
-        "status": "changeObjs"
+        "status": "changeObj"
       }
     ],
-    "status": "changeObjs"
+    "status": "changeObj"
   },
   {
     "key": "group1",
@@ -93,68 +89,36 @@
       {
         "key": "nest",
         "value": {
-          "obj1Key": [
-            {
-              "key": "key",
-              "value": "value",
-              "status": "unchange"
-            }
-          ],
+          "obj1Key": {
+            "key": "value"
+          },
           "obj2Key": "str"
         },
         "status": "change"
       }
     ],
-    "status": "changeObjs"
+    "status": "changeObj"
   },
   {
     "key": "group2",
-    "value": [
-      {
-        "key": "abc",
-        "value": 12345,
-        "status": "unchange"
-      },
-      {
-        "key": "deep",
-        "value": [
-          {
-            "key": "id",
-            "value": 45,
-            "status": "unchange"
-          }
-        ],
-        "status": "unchange"
+    "value": {
+      "abc": 12345,
+      "deep": {
+        "id": 45
       }
-    ],
+    },
     "status": "remove"
   },
   {
     "key": "group3",
-    "value": [
-      {
-        "key": "deep",
-        "value": [
-          {
-            "key": "id",
-            "value": [
-              {
-                "key": "number",
-                "value": 45,
-                "status": "unchange"
-              }
-            ],
-            "status": "unchange"
-          }
-        ],
-        "status": "unchange"
+    "value": {
+      "deep": {
+        "id": {
+          "number": 45
+        }
       },
-      {
-        "key": "fee",
-        "value": 100500,
-        "status": "unchange"
-      }
-    ],
+      "fee": 100500
+    },
     "status": "add"
   }
 ]
