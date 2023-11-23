@@ -17,9 +17,6 @@ const formatterPlain = (diffTree) => {
     const lines = tree.flatMap(({ key, value, status }) => {
       const newPath = givePath(path, key);
       switch (status) {
-        case 'unchange': {
-          return [];
-        }
         case 'changeObj': {
           return iter(value, newPath);
         }
