@@ -18,7 +18,7 @@ const diffTree = (data1, data2) => {
       if (obj1[key] === obj2[key]) {
         return { key, value: obj1[key], status: 'unchange' };
       }
-      return { key, value: { obj1Value: obj1[key], obj2Value: obj2[key] }, status: 'change' };
+      return { key, value: { before: obj1[key], after: obj2[key] }, status: 'change' };
     });
     return childrens;
   };

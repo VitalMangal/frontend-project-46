@@ -27,7 +27,7 @@ const formatterPlain = (diffTree) => {
           return `Property '${newPath}' was removed`;
         }
         case 'change': {
-          return `Property '${newPath}' was updated. From ${giveValue(value.obj1Value)} to ${giveValue(value.obj2Value)}`;
+          return `Property '${newPath}' was updated. From ${giveValue(value.before)} to ${giveValue(value.after)}`;
         }
         default:
           return [];

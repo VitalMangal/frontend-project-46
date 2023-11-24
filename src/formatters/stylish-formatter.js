@@ -25,16 +25,16 @@ const displayValue = (value, depth) => {
 const formatterStylish = (diffTree) => {
   const iter = (tree, depth) => {
     const indent = specСhars.indent.repeat(depth);
-    const lines = tree.map((obj) => {
-      if (obj.status === 'changeObj') {
-        return `${indent}${specСhars[obj.status]}${obj.key}: ${iter(obj.value, depth + 1)}`;
+    const lines = tree.map(({ key, value, status }) => {
+      if (status === 'changeObj') {
+        return `${indent}${specСhars[status]}${key}: ${iter(value, depth + 1)}`;
       }
-      if (obj.status === 'change') {
-        const before = `${indent}${specСhars.remove}${obj.key}: ${displayValue(obj.value.obj1Value, depth + 1)}`;
-        const after = `${indent}${specСhars.add}${obj.key}: ${displayValue(obj.value.obj2Value, depth + 1)}`;
+      if (status === 'change') {
+        const before = `${indent}${specСhars.remove}${key}: ${displayValue(value.before, depth + 1)}`;
+        const after = `${indent}${specСhars.add}${key}: ${displayValue(value.after, depth + 1)}`;
         return `${before}\n${after}`;
       }
-      return `${indent}${specСhars[obj.status]}${obj.key}: ${displayValue(obj.value, depth + 1)}`;
+      return `${indent}${specСhars[status]}${key}: ${displayValue(value, depth + 1)}`;
     });
     return [
       '{',
